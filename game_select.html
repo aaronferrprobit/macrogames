@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MacroGames - Retro</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="icon" href="./assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+  <script src="./scripts/main-select.js" defer></script>
+  <script src="./scripts/games.js" defer></script>
+  <script src="./scripts/play.js" defer></script>
+  <script src="./scripts/api.js" defer></script>
+</head>
+<body>
+
+  <!-- header: tenemos el logo y la barra de navegacion -->
+  <header>
+    <div class="container">
+      <a href="./index.html"><img src="./assets/images/logo.png" height="60" width="300"></a>
+      <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label class="menu-button-container" for="menu-toggle">
+        <span class="menu-button"></span>
+        </label>
+        <ul class="menu-nav">
+          <li><a href="./search_game.html"><span class="material-symbols-outlined">search</span></a></li>
+          <!-- Al hacer click los enlaces no redirigiran a ningun lado, en cambio ejecutaran la funcion para imprimir el catalogo de la consola seleccionada-->
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="PSX">PSX</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="N64">N64</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="GBA">GBA</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="NDS">NDS</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="SNES">SNES</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="ARCADE">ARCADE</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="GENESIS">GENESIS</a></li>
+          <li><a href="#" onclick="cargarCatalogoSeleccionado(this.id)" id="ATARI">ATARI</a></li>
+          <li><a href="./login.html"><i class="material-icons" style="font-size: 18px;">input</i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mostrará que está cargando antes de que la pagina se cargue por completo -->
+  <div id="div_loader"><span id="loader" class="loader"></span></div>
+
+  <!-- main: aqui se colocara desde JavaScript, todo el codigo del catalogo de la consola seleccionada-->
+  <main id="main_select" style="display: none;"></main>
+  
+  <!-- footer: copyright -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 MacroGames. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
